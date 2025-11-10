@@ -1,0 +1,73 @@
+<section class="login">
+    <form #dataForm="ngForm" (ngSubmit)="loginUsuario()">
+        <span class="titulo-login">
+            Zeno Core
+        </span>
+
+        <span class="descricao-login">
+            A gestão integrada para o seu negócio.
+        </span>
+
+        <img class="img-login" src="users_group.svg" alt="users_group.svg">
+
+        <div class="formulario">
+            <label for="DS_ENTIDADE">
+                Entidade:
+            </label>
+    
+            <input
+            type="text"
+            name="DS_ENTIDADE"
+            id="DS_ENTIDADE"
+            [(ngModel)]="dataRow.DS_ENTIDADE"
+            disabled
+            >
+    
+            <label for="CD_USUARIO">
+                Usuário:
+            </label>
+    
+            <input
+            type="text"
+            name="CD_USUARIO"
+            id="CD_USUARIO"
+            [(ngModel)]="dataRow.CD_USUARIO"
+            required
+            >
+    
+            <label for="SENHA_HASH">
+                Senha:
+            </label>
+    
+            <input
+            type="password"
+            name="SENHA_HASH"
+            id="SENHA_HASH"
+            [(ngModel)]="dataRow.SENHA_HASH"
+            required
+            >
+    
+            <button
+            type="submit"
+            [disabled]="dataForm.invalid"
+            >
+                <img src="check.svg" alt="check">
+                Entrar
+            </button>
+        </div>
+    </form>
+</section>
+
+<dialog #modal>
+    <span class="aviso">
+        {{ mensagem }}
+    </span>
+
+    <button
+    type="button"
+    class="aviso"
+    (click)="confirmarAviso()"
+    >
+        Confirmar!
+    </button>
+</dialog>

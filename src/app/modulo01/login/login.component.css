@@ -1,0 +1,75 @@
+form{
+    position: absolute;
+    width: 40rem;
+    height: 20rem;
+
+    top: calc(50% - 20rem / 2);
+    left: calc(50% - 40rem / 2);
+
+    border: 1px solid gray;
+    border-radius: 1rem;
+
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+span.titulo-login{
+    display: inline-block;
+    width: 100%;
+
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+span.descricao-login{
+    display: inline-block;
+    width: 100%;
+
+    text-align: center;
+    font-style: italic;
+}
+
+img.img-login{
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+}
+
+div.formulario{
+    float: right;
+    width: 26rem;
+    margin: 1rem 0rem;
+}
+
+label{
+    display: inline-block;
+    width: 100%;
+    margin-top: .5rem;
+
+    font-weight: bold;
+}
+
+input{
+    display: inline-block;
+    width: calc(100% - 1.5rem);
+    height: 1.25rem;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+button{
+    display: flex;
+    float: right;
+    width: 8rem;
+    height: 2rem;
+
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    & img{
+        margin: 0rem .5rem 0rem -.5rem;
+    }
+}
