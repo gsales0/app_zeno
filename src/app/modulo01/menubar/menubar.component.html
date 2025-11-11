@@ -1,1 +1,49 @@
-<p>menubar works!</p>
+<section class="menubar">
+    <div class="cabecalho-menubar">
+        
+        <img src="cpu_computer.svg" alt="cpu_computer" class="logo-zeno">
+        
+        <span class="titulo-menubar">
+            Zeno Core
+        </span>
+
+        <span class="descricao-menubar">
+            A gestão integrada para o seu negócio.
+        </span>
+    </div>
+
+    <button
+    class="modulo"
+    (click)="modulo02 ? modulo02 = false : modulo02 = true"
+    >
+        Cadastros
+        <img src="chevron_down.svg" alt="chevron_down" class="modulo">
+    </button>
+    <div class="modulo" *ngIf="modulo02">
+        <a class="componente" routerLink="credores">
+            <img src="users_group.svg" alt="users_group" class="componente">
+            Clientes & Fornecedores
+        </a>
+
+        <a class="componente">
+            <img src="package_delivery.svg" alt="package_delivery" class="componente">
+            Produtos & Serviços
+        </a>
+    </div>
+</section>
+
+<section class="navegador">
+    <div class="cabecalho-navegador">
+        <span class="entidade">
+            {{DS_ENTIDADE}}
+        </span>
+
+        <br>
+
+        <span class="usuario">
+            Versão: 1.0.00 | Usuário: {{NM_USUARIO}}
+        </span>
+    </div>
+
+    <router-outlet></router-outlet>
+</section>

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit{
     let data = await this.sessao.loginUsuario(this.dataRow)
 
     if(data.sucesso){
-      this.router.navigate([`${this.alias}/menu`])
+      this.router.navigate([`${this.alias}/dashboard`])
     }
     else{
       this.mensagem = data.mensagem

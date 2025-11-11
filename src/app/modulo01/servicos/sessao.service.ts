@@ -15,6 +15,7 @@ export class SessaoService {
 
   public ID_USUARIO : string = ''
   public NM_USUARIO : string = ''
+  public DS_ENTIDADE : string = ''
 
   constructor() { }
 
@@ -29,6 +30,7 @@ export class SessaoService {
 
     if(data.sucesso){
       this.ID_ENTIDADE = data.ID_ENTIDADE
+      this.DS_ENTIDADE = data.DS_ENTIDADE
     }
 
     return data
