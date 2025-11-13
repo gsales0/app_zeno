@@ -11,8 +11,7 @@ export class SessaoService {
     "Content-Type":"application/json"
   }
 
-  private ID_ENTIDADE : number = 0 
-
+  public ID_ENTIDADE : number = 0 
   public ID_USUARIO : string = ''
   public NM_USUARIO : string = ''
   public DS_ENTIDADE : string = ''

@@ -1,1 +1,264 @@
-<p>credores works!</p>
+<section class="componente">
+    <span class="componente">
+        Cadastro de Clientes & Fornecedores
+    </span>
+
+    <div class="ferramentas" *ngIf="modoConsulta">
+        <button
+        class="ferramentas"
+        (click)="telaRegistro = true; modoConsulta = false"
+        >
+            Incluir
+        </button>
+
+        <button class="ferramentas">
+            Alterar
+        </button>
+
+        <button class="ferramentas">
+            Consultar
+        </button>
+
+        <button class="ferramentas">
+            Excluir
+        </button>
+    </div>
+
+    <div class="ferramentas" *ngIf="!modoConsulta">
+        <button class="ferramentas">
+            Salvar +
+        </button>
+
+        <button class="ferramentas">
+            Salvar
+        </button>
+
+        <button
+        class="ferramentas"
+        (click)="telaRegistro = false; modoConsulta = true"
+        >
+            Cancelar
+        </button>
+    </div>
+
+    <div class="container" *ngIf="!telaRegistro">
+        <div class="pesquisar">
+            <label for="PESQUISAR">
+                Pesquisar:
+            </label>
+
+            <label for="ID_MES">
+                Mês:
+            </label>
+
+            <br>
+
+            <select name="ID_MES" id="ID_MES">
+                <option value="1">01 - JANEIRO</option>
+                <option value="2">02 - FEVEREIRO</option>
+                <option value="3">03 - MARÇO</option>
+                <option value="4">04 - ABRIL</option>
+                <option value="5">05 - MAIO</option>
+                <option value="6">06 - JUNHO</option>
+                <option value="7">07 - JULHO</option>
+                <option value="8">08 - AGOSTO</option>
+                <option value="9">09 - SETEMBRO</option>
+                <option value="10">10 - OUTUBRO</option>
+                <option value="11">11 - NOVEMBRO</option>
+                <option value="12">12 - DEZEMBRO</option>
+            </select>
+
+            <input
+            type="search"
+            name="PESQUISAR"
+            id="PESQUISAR"
+            >
+
+            <button class="pesquisar">
+                Buscar
+            </button>
+
+            <button class="pesquisar">
+                Filtrar
+            </button>
+        </div>
+
+        <div class="datagrid">
+            <table class="datagrid">
+                <thead>
+                    <tr>
+                        <th style="width: 10%">
+                            Código:
+                        </th>
+                        <th>
+                            Nome:
+                        </th>
+                        <th style="width: 15%">
+                            Tipo:
+                        </th>
+                        <th style="width: 20%">
+                            CPF/CNPJ:
+                        </th>
+                        <th style="width: 10%">
+                            Ativo:
+                        </th>
+                    </tr>
+
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="container" *ngIf="telaRegistro">
+        <form class="dataform">
+
+            <!-- LINHA 01 -->
+            <label for="CD_CREDOR" style="width: 4rem">
+                Código:
+            </label>
+
+            <label for="NM_CREDOR" style="width: 22.5rem">
+                Nome:
+            </label>
+
+            <label for="TP_CREDOR">
+                Tipo:
+            </label>
+
+            <br>
+
+            <input
+            type="text"
+            name="CD_CREDOR"
+            id="CD_CREDOR"
+
+            style="width: 4rem"
+            >
+
+            <input
+            type="text"
+            name="NM_CREDOR"
+            id="NM_CREDOR"
+
+            style="width: 22.5rem"
+            >
+
+            <select
+            name="TP_CREDOR"
+            id="TP_CREDOR"
+
+            style="width: 6rem"
+            >
+                <option hidden></option>
+                <option value="F">Física</option>
+                <option value="J">Jurídica</option>
+            </select>
+
+            <br>
+
+            <!-- LINHA 02 -->
+            <label for="CADASTRO" style="width: 8rem">
+                CPF/CNPJ:
+            </label>
+
+            <label for="CONTATO" style="width: 6rem">
+                Contato:
+            </label>
+
+            <label for="EMAIL" style="width: 15rem">
+                Email:
+            </label>
+
+            <br>
+
+            <input
+            type="text"
+            name="CADASTRO"
+            id="CADASTRO"
+
+            style="width: 8rem"
+            >
+
+            <input
+            type="text"
+            name="CONTATO"
+            id="CONTATO"
+
+            style="width: 6rem"
+            >
+
+            <input
+            type="email" 
+            name="EMAIL" 
+            id="EMAIL"
+
+            style="width: 18rem"
+            >
+            <br>
+
+            <label for="UF_CREDOR" style="width: 4rem">
+                Estado:
+            </label>
+
+            <label for="CIDADE" style="width: 10rem">
+                Cidade:
+            </label>
+
+            <label for="ENDERECO" style="width: 18rem;">
+                Endereço:
+            </label>
+
+            <select
+            name="UF_CREDOR"
+            id="UF_CREDOR"
+            style="width: 4.5rem"
+            >
+                <option hidden></option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select>
+
+            <input
+            type="text"
+            name="CIDADE"
+            id="CIDADE"
+
+            style="width: 10rem"
+            >
+
+            <input
+            type="text"
+            name="ENDERECO"
+            id="ENDERECO"
+
+            style="width: 18rem"
+            >
+        </form>
+    </div>
+
+</section>
