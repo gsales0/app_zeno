@@ -123,6 +123,7 @@ table.datagrid{
 /* ================================================== */
 
 form.dataform{
+  position: relative;
   width: 60%;
   height: calc(100% - 2rem);
   margin: 1rem 20%;
@@ -138,12 +139,42 @@ label{
 
 input{
   margin: 0rem .5rem ;
-  height: 1.15rem;
+  height: 1.35rem;
   outline: none;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 
 select{
   margin: 0rem .5rem;
-  height: 1.55rem;
+  height: 1.65rem;
   outline: none;
+
+  border: 1px solid gray;
+  border-radius: 3px;
 }
+
+.invalido{
+  border: 1px solid red;
+}
+
+div.executores{
+  position: absolute;
+  top: calc(100% - 4rem);
+  width: calc(100% - 1rem);
+  margin: 1rem .5rem;
+}
+
+button.executores{
+  float: right;
+  width: 6rem;
+  height: 1.75rem;
+  margin: 0rem .5rem;
+
+  font-size: small;
+  cursor: pointer;
+}
+
+/* ================================================== */
+/*                 TESTES                             */
+/* ================================================== */

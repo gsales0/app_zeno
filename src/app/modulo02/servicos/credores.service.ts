@@ -14,6 +14,18 @@ export class CredoresService {
 
   constructor(private sessao : SessaoService) { }
 
+  async codigo(){
+
+    let request = await fetch(this.url + this.sessao.ID_ENTIDADE + '/codigo', {
+      method: "GET",
+      headers: this.headers
+    })
+
+    let data = await request.json()
+
+    return data[0].CD_CREDOR
+  }
+
   async incluir(dataRow: object){
 
     let request = await fetch(this.url + this.sessao.ID_ENTIDADE + '/incluir', {
