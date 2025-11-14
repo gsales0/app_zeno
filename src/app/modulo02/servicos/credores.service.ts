@@ -14,6 +14,18 @@ export class CredoresService {
 
   constructor(private sessao : SessaoService) { }
 
+  async dataGrid(){
+
+    let request = await fetch(this.url + this.sessao.ID_ENTIDADE + '/datagrid', {
+      method: "GET",
+      headers: this.headers
+    })
+
+    let data = await request.json()
+
+    return data
+  }
+
   async codigo(){
 
     let request = await fetch(this.url + this.sessao.ID_ENTIDADE + '/codigo', {
@@ -30,6 +42,43 @@ export class CredoresService {
 
     let request = await fetch(this.url + this.sessao.ID_ENTIDADE + '/incluir', {
       method: "POST",
+      headers: this.headers,
+      body: JSON.stringify(dataRow)
+    })
+
+    let data = await request.json()
+
+    return data
+  }
+
+  async consultar(ID_CREDOR: number){
+
+    let request = await fetch(this.url + ID_CREDOR + '/consultar', {
+      method: "GET",
+      headers: this.headers
+    })
+
+    let data = await request.json()
+
+    return data[0]
+  }
+
+  async excluir(ID_CREDOR: number){
+
+    let request = await fetch(this.url + ID_CREDOR + '/excluir', {
+      method: "DELETE",
+      headers: this.headers
+    })
+
+    let data = await request.json()
+
+    return data
+  }
+
+  async alterar(dataRow: any){
+    
+    let request = await fetch(this.url + dataRow.ID_CREDOR + '/alterar', {
+      method: "PUT",
       headers: this.headers,
       body: JSON.stringify(dataRow)
     })
